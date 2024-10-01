@@ -1,0 +1,3 @@
+*.tiff filter=lfs diff=lfs merge=lfs
+*.fbx filter=lfs diff=lfs merge=lfs
+*.psd filter=lfs diff=lfs merge=lfs

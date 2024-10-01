@@ -1,0 +1,13 @@
+bin/
+
+editor/
+
+logbackups/
+
+solutions/
+
+user/
+
+editor.log
+
+error.log
