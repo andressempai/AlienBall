@@ -1,8 +1,9 @@
 #include "StdAfx.h"
 #include "PlayerController.h"
-#include "../Interaction/Interaction.h"
-#include "../ToolBox/ToolBox.h"
-#include "../Interactable.h"
+#include "Components/Interaction/Interaction.h"
+#include "Components/ToolBox/ToolBox.h"
+#include "Components/inventory/inventory.h"
+#include "Components/Interactable.h"
 
 #include <CrySchematyc/Env/Elements/EnvComponent.h>
 #include <CrySchematyc/Env/IEnvRegistrar.h>
@@ -209,6 +210,10 @@ void CPlayerController::Initialize()
 
 	interaction_component_ = m_pEntity->GetOrCreateComponentClass<CInteraction>();
 	tool_box_component_ = m_pEntity->GetOrCreateComponent<CToolBox>();
+	inventory_component_ = m_pEntity->GetOrCreateComponent<inventory>();
+
+	inventory_component_->add_item(weapon{ 10, 30, 30 });
+	inventory_component_->add_item(armor{ 50 });
 }
 
 Cry::Entity::EventFlags CPlayerController::GetEventMask() const
@@ -341,4 +346,5 @@ void CPlayerController::ProcessEvent(const SEntityEvent& event)
 
 	state_flags_.reset();
 	mouse_location_delta_.zero();
+	inventory_component_->use_all_items();
 }

@@ -41,6 +41,12 @@ add_sources("Interaction_uber.cpp"
 		"Components/Interaction/Interaction.cpp"
 		"Components/Interaction/Interaction.h"
 )
+add_sources("inventory_uber.cpp"
+    PROJECTS Game
+    SOURCE_GROUP "Components\\\\inventory"
+		"Components/inventory/inventory.cpp"
+		"Components/inventory/inventory.h"
+)
 add_sources("KeyOrTool_uber.cpp"
     PROJECTS Game
     SOURCE_GROUP "Components\\\\KeyOrTool"
@@ -64,12 +70,6 @@ add_sources("PlayerController_uber.cpp"
     SOURCE_GROUP "Components\\\\PlayerController"
 		"Components/PlayerController/PlayerController.cpp"
 		"Components/PlayerController/PlayerController.h"
-)
-add_sources("PoisonDamage_uber.cpp"
-    PROJECTS Game
-    SOURCE_GROUP "Components\\\\PoisonDamage"
-		"Components/PoisonDamage/PoisonDamage.cpp"
-		"Components/PoisonDamage/PoisonDamage.h"
 )
 add_sources("Statuette_uber.cpp"
     PROJECTS Game
